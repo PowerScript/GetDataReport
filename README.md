@@ -1,7 +1,7 @@
 <img src="https://scontent-mia1-1.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/10625093_743679562393686_7511370776946880828_n.jpg?oh=2ffaffad21a56ea1539a6447355f7877&oe=5666172D">
 
 ## ABOUT
-Script in PHP+JS for get information of target through a web application, use $_SERVER functions and JS functions for get get valuable information.
+Script in PHP+JS for get information of target through a web application, use $_SERVER functions and JS functions for get valuable information.
 
 ## REQUIREMENTS
 ```
