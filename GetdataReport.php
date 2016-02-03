@@ -1,13 +1,14 @@
 <?php
 /*
    Coder  : [f][t][@inbox.ru] \ RedToor 
-   Project: GetDataReport \ http://sourceforge.net/projects/terminater/ - https://github.com/RedToor/GetDataReport
+   Project: https://github.com/RedToor/GetDataReport
    Team   : CODETEAM
    Date   : 04/12/2014 
    Date   : 22/12/2014
    Date   : 12/01/2015
    Date   : 13/06/2015
    Date   : 10/09/2015
+   Date   : 02/02/2016
 
     HOW to Works
     to run this script is necessary that the victim has active JavaScript, 
@@ -51,6 +52,7 @@ function java(){
 function OS(){
         $system="unKnow";
         $os=array(
+            '/Windows NT 10.0/i'    =>  'Windows 10',
             '/windows nt 6.4/i'     =>  'Windows 10',
             '/windows nt 6.3/i'     =>  'Windows 8.1',
             '/windows nt 6.2/i'     =>  'Windows 8',
