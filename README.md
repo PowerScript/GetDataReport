@@ -1,8 +1,10 @@
 
 ## ABOUT
-Script in PHP+JS for get information of target through a web application, use $_SERVER functions and JS functions for get valuable information.
+Script in PHP+JS for get information of target through a web application, use $_SERVER functions and JS functions for get information of our client.
 
-for web applications
+# Plugin (WEBApps)
+in some web applications need to collect information from the client to perform tasks with this plugin will be easier to work with the variables you need.
+
 ```
 <?php
 
@@ -35,7 +37,9 @@ echo "<br>Date             ".$data->getdate();
  ?>
 ```
 
-for Reports html
+# Hack (Social engineering)
+With this script we can collect information from a target performing a routing and generating an html page report.
+
 ```
         HTTP://127.0.0.1/GetdataReport.php?id=any&j=yes&url=google.com
 
