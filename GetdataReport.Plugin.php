@@ -126,7 +126,7 @@ class GetDataPlugin{
     }
 
     function javaenabled(){
-        $response=file_get_contents("http://".$_SERVER['HTTP_HOST']."/otra/GetdataReport.Plugin.php?execute=javaenabled");
+        $response=file_get_contents("http://".$_SERVER['HTTP_HOST']."/GetdataReport.Plugin.php?execute=javaenabled");
         return $response;
     }    
 
