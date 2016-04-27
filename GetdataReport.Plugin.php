@@ -3,7 +3,7 @@
    Author : [f][t][@inbox.ru] \ RedToor 
    Project: https://github.com/RedToor/GetDataReport
    Date   : 17-18/03/2016
-   Version: 1.0.1 
+   Version: 1.0.2 
   
    GetDataReport PLUGIN version  
 */
@@ -60,11 +60,11 @@ class GetDataPlugin{
     function device($unix){
         $device="Computer";
         $unix=strtoupper($unix);
-        if(strstr($unix,     'ANDROID')==true)    {$device="Phono";}
-        elseif(strstr($unix, 'IPHONE')==true)     {$device="Phono";}
-        elseif(strstr($unix, 'BLACKBERRY')==true) {$device="Phono";}
-        elseif(strstr($unix, 'WEBOS')==true)      {$device="Phono";}
-        elseif(strstr($unix, 'SYMBIAOS')==true)   {$device="Phono";}
+        if(strstr($unix,     'ANDROID')==true)    {$device="Phone";}
+        elseif(strstr($unix, 'IPHONE')==true)     {$device="Phone";}
+        elseif(strstr($unix, 'BLACKBERRY')==true) {$device="Phone";}
+        elseif(strstr($unix, 'WEBOS')==true)      {$device="Phone";}
+        elseif(strstr($unix, 'SYMBIAOS')==true)   {$device="Phone";}
         elseif(strstr($unix, 'TABLET')==true)     {$device="Tablet";}
         elseif(strstr($unix, 'IPAD')==true)       {$device="Tablet";}
         elseif(strstr($unix, 'IPOD')==true)       {$device="Portable media players ";}return $device;}
