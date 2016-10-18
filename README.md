@@ -7,10 +7,8 @@ in some web applications need to collect information from the client to perform 
 
 ```
 <?php
-
-include("GetdataReport.Plugin.php");
+include(__DIR__."/GetdataReport.Plugin.php");
 $data = new GetDataPlugin();
-
 echo "<br>IP               ".$data->ip();
 echo "<br>Operative System ".$data->os();
 echo "<br>Browser          ".$data->browser();
@@ -32,8 +30,6 @@ echo "<br>Provetor         ".$data->provetor();
 echo "<br>Agent            ".$data->agent();
 echo "<br>Referer          ".$data->referer();
 echo "<br>Date             ".$data->getdate();
-
-
  ?>
 ```
 
