@@ -1,15 +1,21 @@
 <?php
 /*
    Author : [f][t][@inbox.ru] \ RedToor 
-   Project: https://github.com/RedToor/GetDataReport
-   Date   : 17-18/03/2016
-   Version: 1.0.2 
+   Project: https://github.com/powerscript/GetDataReport
+   Date   : 18/10/2016
+   Version: 1.0.3
   
    GetDataReport PLUGIN version  
 */
 
 error_reporting(0);       
 error_log(0);            
+
+$HTTP_S = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https://' : 'http://';
+$path = dirname(__FILE__);
+$position = basename($path);
+$real_path =  $HTTP_S.$_SERVER['HTTP_HOST']."/".$position."/".basename(__FILE__); 
+define("REAL", $real_path);
 
 class GetDataPlugin{ 
     function os(){
@@ -115,25 +121,10 @@ class GetDataPlugin{
         return $data;
     }
 
-    function height(){
-        $response=file_get_contents("http://".$_SERVER['HTTP_HOST']."/GetdataReport.Plugin.php?execute=height");
-        return $response;
-    }
-
-    function width(){
-        $response=file_get_contents("http://".$_SERVER['HTTP_HOST']."/GetdataReport.Plugin.php?execute=width");
-        return $response;
-    }
-
-    function javaenabled(){
-        $response=file_get_contents("http://".$_SERVER['HTTP_HOST']."/GetdataReport.Plugin.php?execute=javaenabled");
-        return $response;
-    }    
-
-    function cookieenabled(){
-        $response=file_get_contents("http://".$_SERVER['HTTP_HOST']."/GetdataReport.Plugin.php?execute=cookieenabled");
-        return $response;
-    }
+    function height(){return file_get_contents(REAL."?execute=height");}
+    function width(){return file_get_contents(REAL."?execute=width");}
+    function javaenabled(){return file_get_contents(REAL."?execute=javaenabled");}    
+    function cookieenabled(){return file_get_contents(REAL."?execute=cookieenabled");}
 
     function ip(){
         if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
@@ -144,25 +135,11 @@ class GetDataPlugin{
          }
     }
 
-    function language(){
-        return $_SERVER['HTTP_ACCEPT_LANGUAGE'];
-    }
-
-    function provetor(){
-        return gethostbyaddr($_SERVER['REMOTE_ADDR']);
-    }
-
-    function agent(){
-        return $_SERVER['HTTP_USER_AGENT'];
-    }
-
-    function referer(){
-        return $_SERVER['HTTP_REFERER'];
-    }
-
-    function getdate(){
-        return date("Y/m/d g:ia");
-    }
+    function language(){return $_SERVER['HTTP_ACCEPT_LANGUAGE'];}
+    function provetor(){return gethostbyaddr($_SERVER['REMOTE_ADDR']);}
+    function agent(){return $_SERVER['HTTP_USER_AGENT'];}
+    function referer(){ return $_SERVER['HTTP_REFERER'];}
+    function getdate(){return date("Y/m/d g:ia");}
 }
 
 if($_GET['execute']!=""){$getjava = new GetDataPlugin();print $getjava->java($_GET['execute']);}
