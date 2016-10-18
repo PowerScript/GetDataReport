@@ -37,10 +37,3 @@ echo "<br>Date             ".$data->getdate();
  ?>
 ```
 
-# Hack (Social engineering)
-With this script we can collect information from a target performing a routing and generating an html page report.
-
-```
-        HTTP://127.0.0.1/GetdataReport.php?id=any&j=yes&url=google.com
-
-```
